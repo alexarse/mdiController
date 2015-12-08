@@ -308,7 +308,7 @@ void MainWindow::OnCreateDraggingWidget(const ax::Event::SimpleMsg<ObjMsg>& msg)
 		k_info.img_path = "resources/BlackAngle.png";
 		k_info.selected_img_path = "resources/BlackAngle.png";
 		k_info.knob_size = ax::Size(100, 100);
-		k_info.n_knob = 100;
+		k_info.n_knob = 20;
 
 		std::shared_ptr<ax::Window::Backbone> tog
 			= ax::shared<ax::Knob>(ax::Rect(pos, k_info.knob_size), ax::Knob::Events(), k_info);

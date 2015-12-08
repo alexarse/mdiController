@@ -29,14 +29,18 @@ void ApplicationManager::SetupApplication()
 	ax::App& app(ax::App::GetInstance());
 
 	app.AddMainEntry([&]() {
+#ifdef __linux__
+		const ax::Size size(app.GetScreenSize());
+#else
 		const ax::Size size(1000, 700);
-		app.SetFrameSize(size);
-		
+		app.SetFrameSize(size);		
+#endif
 		_mainWindow = ax::shared<MainWindow>(ax::Rect(0, 0, size));
 		app.AddTopLevel(_mainWindow);
 	});
-
+#ifndef __linux__
 	app.AddAfterGUILoadFunction([&app]() { app.SetFrameSize(ax::Size(1000, 700)); });
+#endif
 }
 
 int ApplicationManager::MainLoop()
