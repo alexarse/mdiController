@@ -70,7 +70,7 @@ public:
 	typedef std::shared_ptr<Ctrl> Ptr;
 	enum ControlType { CTRL_BUTTON, CTRL_TOGGLE, CTRL_SLIDER, CTRL_KNOB, CTRL_XY, CTRL_CUSTOM };
 
-	Ctrl();
+	//`Ctrl();
 
 	virtual std::shared_ptr<ax::Window::Backbone> GetBackbone() = 0;
 

@@ -2,9 +2,9 @@
 #include <axLib/axOSFileSystem.h>
 
 namespace mdi {
-Ctrl::Ctrl()
-{
-}
+	//Ctrl::Ctrl()
+	//{
+	//}
 
 /*
  * Control factory.
@@ -38,7 +38,7 @@ void CtrlFactory::LoadAllPlugins()
 			plugin_folder.Goto("plugin/" + n.name);
 			for(auto& plugin_file : plugin_folder.GetContent()) {
 				if(plugin_file.ext == "ctrl") {
-					const std::string plugin_path("plugin/" + n.name + "/" + plugin_file.name);
+					const std::string plugin_path("/home/pi/Projects/mdiController/plugin/" + n.name + "/" + plugin_file.name);
 					
 					ax::Print("PLUGIN PATH :", plugin_path);
 					
