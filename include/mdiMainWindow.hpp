@@ -23,7 +23,7 @@ private:
 	std::shared_ptr<InspectorMenu> _inspectorMenu;
 	std::vector<ax::Window::Ptr> _selected_windows;
 
-	typedef std::pair<std::string, ax::Point> ObjMsg;
+	typedef std::tuple<ax::Point, std::string, ax::StringPairVector> ObjMsg;
 
 	axEVENT_ACCESSOR(ax::Event::SimpleMsg<ObjMsg>, OnCreateDraggingWidget);
 	axEVENT_ACCESSOR(ax::Event::SimpleMsg<ax::Point>, OnDraggingWidget);
@@ -32,7 +32,10 @@ private:
 	void OnCreateDraggingWidget(const ax::Event::SimpleMsg<ObjMsg>& msg);
 	void OnDraggingWidget(const ax::Event::SimpleMsg<ax::Point>& msg);
 	void OnReleaseObjWidget(const ax::Event::SimpleMsg<ax::Point>& msg);
-
+	
+	void ConnectStatusBarViewToggles();
+	void ResizeGridWindow();
+	
 	void OnResize(const ax::Size& size);
 
 	void OnPaint(ax::GC gc);

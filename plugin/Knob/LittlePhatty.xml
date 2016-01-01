@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="Knob" 
+		label="Little Phatty" 
+		description="Moog Little Phatty style." 
+		size="(64 x 64)" 
+		img="resources/edit_knob_LittlePhatty.png"> 
+		
+	<attributes size="64 64" 
+				img_path="resources/LittlePhatty.png" 
+				n_img="101"> 
+	</attributes>
+</widget>

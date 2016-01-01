@@ -1,3 +1,4 @@
+#include "mdiApplicationManager.hpp"
 #include "mdiStatusBar.hpp"
 #include <axLib/axToggle.h>
 
@@ -27,21 +28,34 @@ StatusBar::StatusBar(const ax::Rect& rect)
 	tog_info.img = "resources/top_menu_toggle_left.png";
 	tog_info.single_img = false;
 
-	ax::Point pos(rect.size.x - 95, 2);
-	const ax::Size tog_size(25, 25);
-	ax::Toggle::Events tog_evts;
+	ax::Point pos(rect.size.x - 35 * 3 - 20, 2);
+	const ax::Size tog_size(35, 35);
 	
-	auto tog_left = ax::shared<ax::Toggle>(ax::Rect(pos, tog_size), tog_evts, tog_info);
+	ax::Toggle::Events tog_left_evts(ax::Event::Function([](ax::Event::Msg* msg) {
+		ax::Toggle::Msg* t_msg(static_cast<ax::Toggle::Msg*>(msg));
+		ApplicationManager::GetInstance()->GetMainEvtObj()->PushEvent(9000, new ax::Toggle::Msg(*t_msg));
+	}));
+	
+	auto tog_left = ax::shared<ax::Toggle>(ax::Rect(pos, tog_size), tog_left_evts, tog_info);
 
 	pos = tog_left->GetWindow()->dimension.GetRect().GetNextPosRight(5);
 	tog_info.img = "resources/top_menu_toggle_bottom.png";
-	
-	auto tog_middle = ax::shared<ax::Toggle>(ax::Rect(pos, tog_size), tog_evts, tog_info);
+
+	ax::Toggle::Events tog_middle_evts(ax::Event::Function([](ax::Event::Msg* msg) {
+		ax::Toggle::Msg* t_msg(static_cast<ax::Toggle::Msg*>(msg));
+		ApplicationManager::GetInstance()->GetMainEvtObj()->PushEvent(9001, new ax::Toggle::Msg(*t_msg));
+	}));
+	auto tog_middle = ax::shared<ax::Toggle>(ax::Rect(pos, tog_size), tog_middle_evts, tog_info);
 
 	pos = tog_middle->GetWindow()->dimension.GetRect().GetNextPosRight(5);
 	tog_info.img = "resources/top_menu_toggle_right.png";
+
+	ax::Toggle::Events tog_right_evts(ax::Event::Function([](ax::Event::Msg* msg) {
+		ax::Toggle::Msg* t_msg(static_cast<ax::Toggle::Msg*>(msg));
+		ApplicationManager::GetInstance()->GetMainEvtObj()->PushEvent(9002, new ax::Toggle::Msg(*t_msg));
+	}));
 	
-	auto tog_right = ax::shared<ax::Toggle>(ax::Rect(pos, tog_size), tog_evts, tog_info);
+	auto tog_right = ax::shared<ax::Toggle>(ax::Rect(pos, tog_size), tog_right_evts, tog_info);
 
 	tog_left->SetSelected(true);
 	tog_middle->SetSelected(true);

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="Knob" 
+		label="Knob" 
+		description="TB303 style." 
+		size="(64 x 64)" 
+		img="resources/edit_knob_axKnobTB303_64x64.png"> 
+		
+	<attributes size="64 64" 
+				img_path="resources/axKnobTB303_64x64.png" 
+				n_img="101"> 
+	</attributes>
+</widget>

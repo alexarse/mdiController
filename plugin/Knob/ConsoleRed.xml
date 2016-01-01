@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="Knob" 
+		label="Console" 
+		description="Console knob." 
+		size="(46 x 46)" 
+		img="resources/edit_knob_dark.png"> 
+			
+	<attributes size="46 46" 
+				img_path="resources/knob_dark.png" 
+				n_img="128"> 
+	</attributes> 
+</widget>

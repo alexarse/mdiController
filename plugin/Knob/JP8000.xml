@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="Knob" 
+		label="Roland JP8000" 
+		description="JP8000 style." 
+		size="(64 x 64)" 
+		img="resources/edit_knob_JP8000.png"> 
+		
+	<attributes size="64 64" 
+				img_path="resources/JP8000.png" 
+				n_img="101"> 
+	</attributes>
+</widget>

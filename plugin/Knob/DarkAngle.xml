@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="Knob" 
+		label="Dark Angle" 
+		description="Default knob." 
+		size="(100 x 100)" 
+		img="resources/edit_knob_BlackAngle.png">
+			
+	<attributes size="100 100" 
+				img_path="resources/BlackAngle.png" 
+				n_img="20"> 
+	</attributes> 
+</widget>

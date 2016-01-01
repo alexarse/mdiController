@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="Button" 
+		label="Play" 
+		description="Play button." 
+		size="(64 x 64)" 
+		img="resources/edit_button_play.png"> 
+			
+	<attributes size="64 64" 
+				img_path="resources/button_play.png" 
+				label=""> 
+	</attributes> 
+</widget>

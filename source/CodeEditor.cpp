@@ -392,6 +392,8 @@ TextEditor::TextEditor(const ax::Rect& rect, const TextEditor::Info& info)
 		btn_info, "", "S"));
 
 	win->node.Add(save_btn);
+	
+	
 }
 
 std::string TextEditor::GetStringContent() const

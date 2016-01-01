@@ -14,18 +14,75 @@
 	<widget id="Toggle2" label="Toggle" description="Sequencer toggle." size="(55 x 55)" img="resources/edit_toggle_seq.png"> </widget>
 
 	<separator name="ax::Knob"> </separator>
-	<widget id="Knob" label="Knob" description="Moog Little Phatty style." size="(64 x 64)" img="resources/edit_knob_LittlePhatty.png"> </widget>
-	<widget id="Knob2" label="Knob" description="JP8000 style." size="(64 x 64)" img="resources/edit_knob_JP8000.png"> </widget>
 
-	<widget id="Knob3" label="Knob" description="Default knob." size="(100 x 100)" img="resources/edit_knob_BlackAngle.png"> </widget>
+	<widget id="Knob" 
+			label="Little Phatty" 
+			description="Moog Little Phatty style." 
+			size="(64 x 64)" 
+			img="resources/edit_knob_LittlePhatty.png"> 
+		
+			<attributes size="64 64" 
+						img_path="resources/LittlePhatty.png" 
+						n_img="101"> 
+			</attributes>
+	</widget>
+	
+	<widget id="Knob" 
+			label="Roland JP8000" 
+			description="JP8000 style." 
+			size="(64 x 64)" 
+			img="resources/edit_knob_JP8000.png"> 
+		
+			<attributes size="64 64" 
+						img_path="resources/JP8000.png" 
+						n_img="101"> 
+			</attributes>
+	</widget>
 
-	<widget id="Knob4" label="Knob" description="Console knob." size="(46 x 46)" img="resources/edit_knob_dark.png"> </widget>
+	<widget id="Knob" 
+			label="Dark Angle" 
+			description="Default knob." 
+			size="(100 x 100)" 
+			img="resources/edit_knob_BlackAngle.png">
+			
+			<attributes size="100 100" 
+						img_path="resources/BlackAngle.png" 
+						n_img="20"> 
+			</attributes> 
+	</widget>
 
-	<widget id="Knob5" label="Knob" description="Small console knob." size="(36 x 36)" img="resources/edit_knob_blue_36x36.png"> </widget>
+	<widget id="Knob" 
+			label="Console" 
+			description="Console knob." 
+			size="(46 x 46)" 
+			img="resources/edit_knob_dark.png"> 
+			
+			<attributes size="46 46" 
+						img_path="resources/knob_dark.png" 
+						n_img="128"> 
+			</attributes> 
+	</widget>
 
-	<widget id="Knob6" label="Knob" description="TB303 style." size="(64 x 64)" img="resources/edit_knob_axKnobTB303_64x64.png"> </widget>
+	<widget id="Knob5" 
+			label="Knob" 
+			description="Small console knob." 
+			size="(36 x 36)" 
+			img="resources/edit_knob_blue_36x36.png"> 
+	</widget>
 
-	<widget id="Knob7" label="Knob" description="Reakor style." size="(46 x 46)" img="resources/edit_knob_axKnobReaktor.png"> </widget>
+	<widget id="Knob6" 
+			label="Knob" 
+			description="TB303 style." 
+			size="(64 x 64)" 
+			img="resources/edit_knob_axKnobTB303_64x64.png"> 
+	</widget>
+
+	<widget id="Knob7" 
+			label="Knob" 
+			description="Reakor style." 
+			size="(46 x 46)" 
+			img="resources/edit_knob_axKnobReaktor.png"> 
+	</widget>
 
 
 	<separator name="Line Follower"> </separator>

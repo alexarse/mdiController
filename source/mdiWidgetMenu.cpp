@@ -1,6 +1,7 @@
 #include "mdiApplicationManager.hpp"
 #include "mdiWidgetMenu.hpp"
 
+#include <axLib/axOSFileSystem.h>
 #include <axLib/rapidxml.hpp>
 
 namespace mdi {
@@ -61,12 +62,35 @@ WidgetMenuObj::WidgetMenuObj(const ax::Rect& rect, const std::string& name, cons
 	win->event.OnMouseLeftUp = ax::WBind<ax::Point>(this, &WidgetMenuObj::OnMouseLeftUp);
 }
 
+WidgetMenuObj::WidgetMenuObj(const ax::Rect& rect, const std::string& name, const std::string& title,
+	const std::string& info, const std::string& size, const std::string& img_path,
+	const ax::StringPairVector& attributes)
+	: _font("resources/FreeSansBold.ttf")
+	, _font_normal(0)
+	, _name(name)
+	, _title(title)
+	, _info(info)
+	, _size_str(size)
+	, _attributes(attributes)
+{
+	_font_normal.SetFontSize(11);
+
+	_img = ax::shared<ax::Image>(img_path);
+
+	// Create window.
+	win = ax::Window::Create(rect);
+	win->event.OnPaint = ax::WBind<ax::GC>(this, &WidgetMenuObj::OnPaint);
+	win->event.OnMouseLeftDown = ax::WBind<ax::Point>(this, &WidgetMenuObj::OnMouseLeftDown);
+	win->event.OnMouseLeftDragging = ax::WBind<ax::Point>(this, &WidgetMenuObj::OnMouseLeftDragging);
+	win->event.OnMouseLeftUp = ax::WBind<ax::Point>(this, &WidgetMenuObj::OnMouseLeftUp);
+}
+
 void WidgetMenuObj::OnMouseLeftDown(const ax::Point& pos)
 {
 	win->event.GrabMouse();
-	ApplicationManager::GetMainEvtObj()->PushEvent(
-		8000, new ax::Event::SimpleMsg<std::pair<std::string, ax::Point>>(
-				  std::pair<std::string, ax::Point>(_name, pos)));
+	using MsgType = std::tuple<ax::Point, std::string, ax::StringPairVector>;
+	auto msg_data = MsgType(pos, _name, _attributes);
+	ApplicationManager::GetMainEvtObj()->PushEvent(8000, new ax::Event::SimpleMsg<MsgType>(msg_data));
 	win->Update();
 }
 
@@ -115,41 +139,71 @@ WidgetMenu::WidgetMenu(const ax::Rect& rect)
 	_panel = ax::Window::Create(ax::Rect(ax::Point(1, 1), rect.size - ax::Size(2, 2)));
 	win->node.Add(_panel);
 
+	ax::Point pos(ParseControlFolder());
+
+	ax::ScrollBar::Info sInfo;
+	sInfo.normal = ax::Color(0.22);
+	sInfo.hover = ax::Color(0.23);
+	sInfo.clicking = ax::Color(0.21);
+	sInfo.slider_contour = ax::Color(0.0, 0.2);
+	sInfo.contour = ax::Color(0.0, 0.0);
+	sInfo.bg_top = ax::Color(0.8, 0.2);
+	sInfo.bg_bottom = ax::Color(0.82, 0.2);
+
+	const int scroll_bar_width(10);
+	ax::Rect sRect(rect.size.x - scroll_bar_width + 1, 0, scroll_bar_width, rect.size.y - 1);
+	_scrollBar = ax::shared<ax::ScrollBar>(sRect, ax::ScrollBar::Events(), sInfo);
+
+	win->node.Add(_scrollBar);
+
+	_panel->property.AddProperty("BlockDrawing");
+	_panel->dimension.SetSizeNoShowRect(ax::Size(rect.size.x, pos.y));
+
+	_scrollBar->SetWindowHandle(_panel.get());
+	_scrollBar->UpdateWindowSize(ax::Size(rect.size.x, pos.y));
+}
+
+ax::Point WidgetMenu::ParseControlFolder()
+{
+	ax::os::Directory dir;
+	dir.Goto("plugin");
+
+	ax::StringVector ctrl_type;
+
+	for (auto& n : dir.GetContent()) {
+		if (n.type == ax::os::File::FOLDER) {
+			ax::Print(n.name);
+			ctrl_type.push_back(n.name);
+		}
+	}
+
+	const ax::Rect rect(win->dimension.GetRect());
+	const ax::Size size(rect.size.x, 50);
+	const ax::Size separator_size(rect.size.x, 20);
+
 	ax::Point pos(0, 0);
-	ax::Size size(rect.size.x, 50);
-	ax::Size separator_size(rect.size.x, 20);
 
-	// Read the xml file into a vector.
-	std::ifstream menu_file_path("resources/widget_menu.xml");
-	std::vector<char> xml_buffer(
-		(std::istreambuf_iterator<char>(menu_file_path)), std::istreambuf_iterator<char>());
-	xml_buffer.push_back('\0');
+	for (auto n : ctrl_type) {
+		const ax::Rect sep_rect(pos, separator_size);
+		ax::Window::Ptr last = _panel->node.Add(ax::shared<WidgetMenuSeparator>(sep_rect, n));
+		pos = last->dimension.GetRect().GetNextPosDown(0);
 
-	rapidxml::xml_document<> doc;
+		ax::os::Directory ctrl_dir;
+		ctrl_dir.Goto("plugin/" + n);
 
-	try {
-		// Parse the buffer using the xml file parsing library into doc.
-		doc.parse<0>(&xml_buffer[0]);
+		for (auto& file : ctrl_dir.GetContent()) {
+			if (file.ext == "xml") {
+				// Read the xml file into a vector.
+				std::ifstream f_path("plugin/" + n + "/" + file.name);
+				std::vector<char> buffer(
+					(std::istreambuf_iterator<char>(f_path)), std::istreambuf_iterator<char>());
+				buffer.push_back('\0');
 
-		rapidxml::xml_node<>* root_node = doc.first_node("WidgetMenu");
+				try {
+					rapidxml::xml_document<> doc;
+					doc.parse<0>(&buffer[0]);
 
-		if (root_node) {
-			rapidxml::xml_node<>* node = root_node->first_node();
-
-			while (node) {
-				std::string node_name(node->name(), node->name_size());
-
-				if (node_name == "separator") {
-					rapidxml::xml_attribute<>* att = node->first_attribute("name");
-					if (att) {
-						std::string separator_name(att->value(), att->value_size());
-						ax::Rect sep_rect(pos, separator_size);
-						pos = _panel->node.Add(ax::shared<WidgetMenuSeparator>(sep_rect, separator_name))
-								  ->dimension.GetRect()
-								  .GetNextPosDown(0);
-					}
-				}
-				else if (node_name == "widget") {
+					rapidxml::xml_node<>* node = doc.first_node("widget");
 					rapidxml::xml_attribute<>* att = node->first_attribute("id");
 					std::string widget_id(att->value(), att->value_size());
 
@@ -165,39 +219,33 @@ WidgetMenu::WidgetMenu(const ax::Rect& rect)
 					att = node->first_attribute("img");
 					std::string widget_img(att->value(), att->value_size());
 
-					pos = _panel->node.Add(ax::shared<WidgetMenuObj>(ax::Rect(pos, size), widget_id,
-											   widget_label, widget_desc, widget_size, widget_img))
-							  ->dimension.GetRect()
-							  .GetNextPosDown(0);
-				}
+					ax::StringPairVector attributes;
+					rapidxml::xml_node<>* child = node->first_node();
 
-				node = node->next_sibling();
+					if (child) {
+						rapidxml::xml_attribute<>* child_att = child->first_attribute();
+
+						if (child_att) {
+							do {
+								attributes.push_back(ax::StringPair(child_att->name(), child_att->value()));
+								child_att = child_att->next_attribute();
+							} while (child_att);
+						}
+					}
+
+					auto obj(ax::shared<WidgetMenuObj>(ax::Rect(pos, size), widget_id, widget_label,
+						widget_desc, widget_size, widget_img, attributes));
+
+					pos = _panel->node.Add(obj)->dimension.GetRect().GetNextPosDown(0);
+				}
+				catch (rapidxml::parse_error err) {
+					ax::Error("Widget menu xml", err.what());
+				}
 			}
 		}
 	}
-	catch (rapidxml::parse_error err) {
-		ax::Error("Widget menu xml", err.what());
-	}
-
-	ax::ScrollBar::Info sInfo;
-	sInfo.normal = ax::Color(0.22);
-	sInfo.hover = ax::Color(0.23);
-	sInfo.clicking = ax::Color(0.21);
-	sInfo.slider_contour = ax::Color(0.0, 0.2);
-	sInfo.contour = ax::Color(0.0, 0.0);
-	sInfo.bg_top = ax::Color(0.8, 0.2);
-	sInfo.bg_bottom = ax::Color(0.82, 0.2);
-
-	ax::Rect sRect(rect.size.x - 9, 0, 10, rect.size.y - 1);
-	_scrollBar = ax::shared<ax::ScrollBar>(sRect, ax::ScrollBar::Events(), sInfo);
-
-	win->node.Add(_scrollBar);
-
-	_panel->property.AddProperty("BlockDrawing");
-	_panel->dimension.SetSizeNoShowRect(ax::Size(rect.size.x, pos.y));
-
-	_scrollBar->SetWindowHandle(_panel.get());
-	_scrollBar->UpdateWindowSize(ax::Size(rect.size.x, pos.y));
+	
+	return pos;
 }
 
 void WidgetMenu::OnPaint(ax::GC gc)

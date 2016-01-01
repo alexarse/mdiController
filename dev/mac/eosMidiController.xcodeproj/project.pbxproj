@@ -1,0 +1,383 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C206ED71C33540C00D53B1A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7C206ED61C33540C00D53B1A /* Info.plist */; };
+		7C206EFF1C3354A900D53B1A /* CodeEditor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EF51C3354A900D53B1A /* CodeEditor.cpp */; };
+		7C206F001C3354A900D53B1A /* ctrlLineFollower.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EF61C3354A900D53B1A /* ctrlLineFollower.cpp */; };
+		7C206F011C3354A900D53B1A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EF71C3354A900D53B1A /* main.cpp */; };
+		7C206F021C3354A900D53B1A /* mdiApplicationManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EF81C3354A900D53B1A /* mdiApplicationManager.cpp */; };
+		7C206F031C3354A900D53B1A /* mdiGridWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EF91C3354A900D53B1A /* mdiGridWindow.cpp */; };
+		7C206F041C3354A900D53B1A /* mdiInspectorMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EFA1C3354A900D53B1A /* mdiInspectorMenu.cpp */; };
+		7C206F051C3354A900D53B1A /* mdiMainWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EFB1C3354A900D53B1A /* mdiMainWindow.cpp */; };
+		7C206F061C3354A900D53B1A /* mdiStatusBar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EFC1C3354A900D53B1A /* mdiStatusBar.cpp */; };
+		7C206F071C3354A900D53B1A /* mdiWidgetMenu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EFD1C3354A900D53B1A /* mdiWidgetMenu.cpp */; };
+		7C206F081C3354A900D53B1A /* Script.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206EFE1C3354A900D53B1A /* Script.cpp */; };
+		7C206F0C1C33554500D53B1A /* libboost_container.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C206F091C33554500D53B1A /* libboost_container.dylib */; };
+		7C206F0D1C33554500D53B1A /* libboost_filesystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C206F0A1C33554500D53B1A /* libboost_filesystem.dylib */; };
+		7C206F0E1C33554500D53B1A /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C206F0B1C33554500D53B1A /* libboost_system.dylib */; };
+		7C206F111C3355E100D53B1A /* mdiCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206F101C3355E100D53B1A /* mdiCtrl.cpp */; };
+		7CCBE0581C3311BD00C36DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCBE0571C3311BD00C36DDF /* Assets.xcassets */; };
+		7CCBE0651C3311E800C36DDF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CCBE0641C3311E800C36DDF /* MainMenu.xib */; };
+		7CCBE0671C3311F800C36DDF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CCBE0661C3311F800C36DDF /* Cocoa.framework */; };
+		7CCBE0691C3311FE00C36DDF /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CCBE0681C3311FE00C36DDF /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7C206ED61C33540C00D53B1A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C206EEC1C33549D00D53B1A /* CodeEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CodeEditor.h; path = ../../../include/CodeEditor.h; sourceTree = "<group>"; };
+		7C206EED1C33549D00D53B1A /* ctrlLineFollower.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = ctrlLineFollower.hpp; path = ../../../include/ctrlLineFollower.hpp; sourceTree = "<group>"; };
+		7C206EEE1C33549D00D53B1A /* mdiApplicationManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mdiApplicationManager.hpp; path = ../../../include/mdiApplicationManager.hpp; sourceTree = "<group>"; };
+		7C206EEF1C33549D00D53B1A /* mdiGridWindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mdiGridWindow.hpp; path = ../../../include/mdiGridWindow.hpp; sourceTree = "<group>"; };
+		7C206EF01C33549D00D53B1A /* mdiInspectorMenu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mdiInspectorMenu.hpp; path = ../../../include/mdiInspectorMenu.hpp; sourceTree = "<group>"; };
+		7C206EF11C33549D00D53B1A /* mdiMainWindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mdiMainWindow.hpp; path = ../../../include/mdiMainWindow.hpp; sourceTree = "<group>"; };
+		7C206EF21C33549D00D53B1A /* mdiStatusBar.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mdiStatusBar.hpp; path = ../../../include/mdiStatusBar.hpp; sourceTree = "<group>"; };
+		7C206EF31C33549D00D53B1A /* mdiWidgetMenu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = mdiWidgetMenu.hpp; path = ../../../include/mdiWidgetMenu.hpp; sourceTree = "<group>"; };
+		7C206EF41C33549D00D53B1A /* Script.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Script.h; path = ../../../include/Script.h; sourceTree = "<group>"; };
+		7C206EF51C3354A900D53B1A /* CodeEditor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CodeEditor.cpp; path = ../../../source/CodeEditor.cpp; sourceTree = "<group>"; };
+		7C206EF61C3354A900D53B1A /* ctrlLineFollower.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ctrlLineFollower.cpp; path = ../../../source/ctrlLineFollower.cpp; sourceTree = "<group>"; };
+		7C206EF71C3354A900D53B1A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../source/main.cpp; sourceTree = "<group>"; };
+		7C206EF81C3354A900D53B1A /* mdiApplicationManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiApplicationManager.cpp; path = ../../../source/mdiApplicationManager.cpp; sourceTree = "<group>"; };
+		7C206EF91C3354A900D53B1A /* mdiGridWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiGridWindow.cpp; path = ../../../source/mdiGridWindow.cpp; sourceTree = "<group>"; };
+		7C206EFA1C3354A900D53B1A /* mdiInspectorMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiInspectorMenu.cpp; path = ../../../source/mdiInspectorMenu.cpp; sourceTree = "<group>"; };
+		7C206EFB1C3354A900D53B1A /* mdiMainWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiMainWindow.cpp; path = ../../../source/mdiMainWindow.cpp; sourceTree = "<group>"; };
+		7C206EFC1C3354A900D53B1A /* mdiStatusBar.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiStatusBar.cpp; path = ../../../source/mdiStatusBar.cpp; sourceTree = "<group>"; };
+		7C206EFD1C3354A900D53B1A /* mdiWidgetMenu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiWidgetMenu.cpp; path = ../../../source/mdiWidgetMenu.cpp; sourceTree = "<group>"; };
+		7C206EFE1C3354A900D53B1A /* Script.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Script.cpp; path = ../../../source/Script.cpp; sourceTree = "<group>"; };
+		7C206F091C33554500D53B1A /* libboost_container.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_container.dylib; path = ../../../../../../usr/local/lib/libboost_container.dylib; sourceTree = "<group>"; };
+		7C206F0A1C33554500D53B1A /* libboost_filesystem.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_filesystem.dylib; path = ../../../../../../usr/local/lib/libboost_filesystem.dylib; sourceTree = "<group>"; };
+		7C206F0B1C33554500D53B1A /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../../usr/local/lib/libboost_system.dylib; sourceTree = "<group>"; };
+		7C206F0F1C3355D600D53B1A /* mdiCtrl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = mdiCtrl.hpp; path = ../../../include/mdiCtrl.hpp; sourceTree = "<group>"; };
+		7C206F101C3355E100D53B1A /* mdiCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiCtrl.cpp; path = ../../../source/mdiCtrl.cpp; sourceTree = "<group>"; };
+		7CCBE04E1C3311BD00C36DDF /* eosMidiController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eosMidiController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CCBE0571C3311BD00C36DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7CCBE0641C3311E800C36DDF /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		7CCBE0661C3311F800C36DDF /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		7CCBE0681C3311FE00C36DDF /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7CCBE04B1C3311BD00C36DDF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CCBE0691C3311FE00C36DDF /* OpenGL.framework in Frameworks */,
+				7C206F0D1C33554500D53B1A /* libboost_filesystem.dylib in Frameworks */,
+				7C206F0E1C33554500D53B1A /* libboost_system.dylib in Frameworks */,
+				7CCBE0671C3311F800C36DDF /* Cocoa.framework in Frameworks */,
+				7C206F0C1C33554500D53B1A /* libboost_container.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7C206ED81C33541700D53B1A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7C206F0F1C3355D600D53B1A /* mdiCtrl.hpp */,
+				7C206EEC1C33549D00D53B1A /* CodeEditor.h */,
+				7C206EED1C33549D00D53B1A /* ctrlLineFollower.hpp */,
+				7C206EEE1C33549D00D53B1A /* mdiApplicationManager.hpp */,
+				7C206EEF1C33549D00D53B1A /* mdiGridWindow.hpp */,
+				7C206EF01C33549D00D53B1A /* mdiInspectorMenu.hpp */,
+				7C206EF11C33549D00D53B1A /* mdiMainWindow.hpp */,
+				7C206EF21C33549D00D53B1A /* mdiStatusBar.hpp */,
+				7C206EF31C33549D00D53B1A /* mdiWidgetMenu.hpp */,
+				7C206EF41C33549D00D53B1A /* Script.h */,
+			);
+			name = include;
+			sourceTree = "<group>";
+		};
+		7C206ED91C33541C00D53B1A /* source */ = {
+			isa = PBXGroup;
+			children = (
+				7C206F101C3355E100D53B1A /* mdiCtrl.cpp */,
+				7C206EF51C3354A900D53B1A /* CodeEditor.cpp */,
+				7C206EF61C3354A900D53B1A /* ctrlLineFollower.cpp */,
+				7C206EF71C3354A900D53B1A /* main.cpp */,
+				7C206EF81C3354A900D53B1A /* mdiApplicationManager.cpp */,
+				7C206EF91C3354A900D53B1A /* mdiGridWindow.cpp */,
+				7C206EFA1C3354A900D53B1A /* mdiInspectorMenu.cpp */,
+				7C206EFB1C3354A900D53B1A /* mdiMainWindow.cpp */,
+				7C206EFC1C3354A900D53B1A /* mdiStatusBar.cpp */,
+				7C206EFD1C3354A900D53B1A /* mdiWidgetMenu.cpp */,
+				7C206EFE1C3354A900D53B1A /* Script.cpp */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+		7CCBE0451C3311BD00C36DDF = {
+			isa = PBXGroup;
+			children = (
+				7C206F091C33554500D53B1A /* libboost_container.dylib */,
+				7C206F0A1C33554500D53B1A /* libboost_filesystem.dylib */,
+				7C206F0B1C33554500D53B1A /* libboost_system.dylib */,
+				7CCBE0681C3311FE00C36DDF /* OpenGL.framework */,
+				7CCBE0661C3311F800C36DDF /* Cocoa.framework */,
+				7CCBE0501C3311BD00C36DDF /* eosMidiController */,
+				7CCBE04F1C3311BD00C36DDF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7CCBE04F1C3311BD00C36DDF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CCBE04E1C3311BD00C36DDF /* eosMidiController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7CCBE0501C3311BD00C36DDF /* eosMidiController */ = {
+			isa = PBXGroup;
+			children = (
+				7C206ED81C33541700D53B1A /* include */,
+				7C206ED91C33541C00D53B1A /* source */,
+				7C206ED61C33540C00D53B1A /* Info.plist */,
+				7CCBE0571C3311BD00C36DDF /* Assets.xcassets */,
+				7CCBE0641C3311E800C36DDF /* MainMenu.xib */,
+			);
+			path = eosMidiController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7CCBE04D1C3311BD00C36DDF /* eosMidiController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7CCBE05F1C3311BD00C36DDF /* Build configuration list for PBXNativeTarget "eosMidiController" */;
+			buildPhases = (
+				7CCBE04A1C3311BD00C36DDF /* Sources */,
+				7CCBE04B1C3311BD00C36DDF /* Frameworks */,
+				7CCBE04C1C3311BD00C36DDF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = eosMidiController;
+			productName = eosMidiController;
+			productReference = 7CCBE04E1C3311BD00C36DDF /* eosMidiController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7CCBE0461C3311BD00C36DDF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ax;
+				TargetAttributes = {
+					7CCBE04D1C3311BD00C36DDF = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 7CCBE0491C3311BD00C36DDF /* Build configuration list for PBXProject "eosMidiController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7CCBE0451C3311BD00C36DDF;
+			productRefGroup = 7CCBE04F1C3311BD00C36DDF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CCBE04D1C3311BD00C36DDF /* eosMidiController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7CCBE04C1C3311BD00C36DDF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CCBE0581C3311BD00C36DDF /* Assets.xcassets in Resources */,
+				7CCBE0651C3311E800C36DDF /* MainMenu.xib in Resources */,
+				7C206ED71C33540C00D53B1A /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7CCBE04A1C3311BD00C36DDF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C206F081C3354A900D53B1A /* Script.cpp in Sources */,
+				7C206F111C3355E100D53B1A /* mdiCtrl.cpp in Sources */,
+				7C206F001C3354A900D53B1A /* ctrlLineFollower.cpp in Sources */,
+				7C206F041C3354A900D53B1A /* mdiInspectorMenu.cpp in Sources */,
+				7C206EFF1C3354A900D53B1A /* CodeEditor.cpp in Sources */,
+				7C206F031C3354A900D53B1A /* mdiGridWindow.cpp in Sources */,
+				7C206F061C3354A900D53B1A /* mdiStatusBar.cpp in Sources */,
+				7C206F011C3354A900D53B1A /* main.cpp in Sources */,
+				7C206F021C3354A900D53B1A /* mdiApplicationManager.cpp in Sources */,
+				7C206F071C3354A900D53B1A /* mdiWidgetMenu.cpp in Sources */,
+				7C206F051C3354A900D53B1A /* mdiMainWindow.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7CCBE05D1C3311BD00C36DDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CONFIGURATION_BUILD_DIR = ../../;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					/usr/local/include/freetype2/,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+					"-laxLibCore",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7CCBE05E1C3311BD00C36DDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include/,
+					/usr/local/include/freetype2/,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib/;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-lpng",
+					"-lfreetype",
+					"-laxLibCore",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7CCBE0601C3311BD00C36DDF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = eosMidiController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ax.eosMidiController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7CCBE0611C3311BD00C36DDF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = eosMidiController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ax.eosMidiController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7CCBE0491C3311BD00C36DDF /* Build configuration list for PBXProject "eosMidiController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CCBE05D1C3311BD00C36DDF /* Debug */,
+				7CCBE05E1C3311BD00C36DDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7CCBE05F1C3311BD00C36DDF /* Build configuration list for PBXNativeTarget "eosMidiController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CCBE0601C3311BD00C36DDF /* Debug */,
+				7CCBE0611C3311BD00C36DDF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7CCBE0461C3311BD00C36DDF /* Project object */;
+}

@@ -25,11 +25,16 @@ namespace mdi {
 					  const std::string& title, const std::string& info,
 					  const std::string& size, const std::string& img_path);
 		
+		WidgetMenuObj(const ax::Rect& rect, const std::string& name,
+					  const std::string& title, const std::string& info,
+					  const std::string& size, const std::string& img_path,
+					  const ax::StringPairVector& attributes);
 	private:
 		ax::Font _font;
 		ax::Font _font_normal;
 		std::string _name, _title, _info, _size_str;
 		std::shared_ptr<ax::Image> _img;
+		ax::StringPairVector _attributes;
 		
 		void OnMouseLeftDown(const ax::Point& pos);
 		void OnMouseLeftDragging(const ax::Point& pos);
@@ -44,6 +49,8 @@ namespace mdi {
 		std::shared_ptr<WidgetMenuObj> _objs; // Fuckup for now.
 		ax::Window::Ptr _panel;
 		ax::ScrollBar::Ptr _scrollBar;
+		
+		ax::Point ParseControlFolder();
 		
 		void OnPaint(ax::GC gc);
 	};
