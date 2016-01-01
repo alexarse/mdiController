@@ -32,14 +32,14 @@ void ApplicationManager::SetupApplication()
 #ifdef __linux__
 		const ax::Size size(app.GetScreenSize());
 #else
-		const ax::Size size(1000, 700);
+		const ax::Size size(1024, 600);
 		app.SetFrameSize(size);		
 #endif
 		_mainWindow = ax::shared<MainWindow>(ax::Rect(0, 0, size));
 		app.AddTopLevel(_mainWindow);
 	});
 #ifndef __linux__
-	app.AddAfterGUILoadFunction([&app]() { app.SetFrameSize(ax::Size(1000, 700)); });
+	app.AddAfterGUILoadFunction([&app]() { app.SetFrameSize(ax::Size(1024, 600)); });
 #endif
 }
 

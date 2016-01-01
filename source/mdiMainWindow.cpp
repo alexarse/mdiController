@@ -11,6 +11,7 @@
 
 #include "mdiCtrl.hpp"
 
+
 namespace mdi {
 MainWindow::MainWindow(const ax::Rect& rect)
 {
@@ -62,6 +63,11 @@ MainWindow::MainWindow(const ax::Rect& rect)
 				n->Update();
 			}
 		}));
+	
+	const ax::Rect keyboard_rect(0, rect.size.y - 340 - 18, 950, 340);
+	_ansi_keyboard = ax::shared<AnsiKeyboard>(keyboard_rect);
+	
+	win->node.Add(_ansi_keyboard);
 }
 
 void MainWindow::ConnectStatusBarViewToggles()
@@ -513,6 +519,12 @@ void MainWindow::OnReleaseObjWidget(const ax::Event::SimpleMsg<ax::Point>& msg)
 {
 	std::vector<ax::Window::Ptr>& nodes
 		= ax::App::GetInstance().GetPopupManager()->GetWindowTree()->GetNodeVector();
+	
+	if(nodes.empty()) {
+		ax::Error("MainWindow::OnReleaseObjWidget -> No node in Popupmanager vector.");
+		return;
+	}
+	
 	ax::Window::Ptr win = nodes[0];
 
 	nodes.clear();

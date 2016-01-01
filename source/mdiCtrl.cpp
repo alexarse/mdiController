@@ -42,8 +42,13 @@ void CtrlFactory::LoadAllPlugins()
 					
 					ax::Print("PLUGIN PATH :", plugin_path);
 					
-					_builder_map.insert(std::pair<std::string, PluginPtr>(n.name,
-						PluginPtr(new Plugin(plugin_path, "Create"))));
+					PluginPtr plugin_ptr(new Plugin(plugin_path, "Create"));
+					
+					if(plugin_ptr->IsLoaded()) {
+						_builder_map.insert(std::pair<std::string, PluginPtr>(n.name, std::move(plugin_ptr)));
+					} else {
+						ax::Error("Failed to load plugin :", plugin_path);
+					}
 				}
 			}
 		}

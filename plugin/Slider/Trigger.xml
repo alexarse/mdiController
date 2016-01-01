@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget id="Button" 
+		label="Trigger" 
+		description="Console knob." 
+		size="(100 x 100)" 
+		img="resources/edit_trigger_button.png"> 
+			
+	<attributes size="100 100" 
+				img_path="resources/trigger_button.png" 
+				label=""> 
+	</attributes> 
+</widget>

@@ -10,6 +10,8 @@
 
 #include "CodeEditor.h"
 
+#include "mdiAnsiKeyboard.hpp"
+
 namespace mdi {
 class MainWindow : public ax::Window::Backbone {
 public:
@@ -22,6 +24,7 @@ private:
 	std::shared_ptr<TextEditor> _codeEditor;
 	std::shared_ptr<InspectorMenu> _inspectorMenu;
 	std::vector<ax::Window::Ptr> _selected_windows;
+	std::shared_ptr<AnsiKeyboard> _ansi_keyboard;
 
 	typedef std::tuple<ax::Point, std::string, ax::StringPairVector> ObjMsg;
 

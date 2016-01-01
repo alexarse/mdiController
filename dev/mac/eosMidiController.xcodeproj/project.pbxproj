@@ -22,6 +22,7 @@
 		7C206F0D1C33554500D53B1A /* libboost_filesystem.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C206F0A1C33554500D53B1A /* libboost_filesystem.dylib */; };
 		7C206F0E1C33554500D53B1A /* libboost_system.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C206F0B1C33554500D53B1A /* libboost_system.dylib */; };
 		7C206F111C3355E100D53B1A /* mdiCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206F101C3355E100D53B1A /* mdiCtrl.cpp */; };
+		7C206F191C37039D00D53B1A /* mdiAnsiKeyboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7C206F181C37039D00D53B1A /* mdiAnsiKeyboard.cpp */; };
 		7CCBE0581C3311BD00C36DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CCBE0571C3311BD00C36DDF /* Assets.xcassets */; };
 		7CCBE0651C3311E800C36DDF /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CCBE0641C3311E800C36DDF /* MainMenu.xib */; };
 		7CCBE0671C3311F800C36DDF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CCBE0661C3311F800C36DDF /* Cocoa.framework */; };
@@ -54,6 +55,8 @@
 		7C206F0B1C33554500D53B1A /* libboost_system.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libboost_system.dylib; path = ../../../../../../usr/local/lib/libboost_system.dylib; sourceTree = "<group>"; };
 		7C206F0F1C3355D600D53B1A /* mdiCtrl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = mdiCtrl.hpp; path = ../../../include/mdiCtrl.hpp; sourceTree = "<group>"; };
 		7C206F101C3355E100D53B1A /* mdiCtrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiCtrl.cpp; path = ../../../source/mdiCtrl.cpp; sourceTree = "<group>"; };
+		7C206F181C37039D00D53B1A /* mdiAnsiKeyboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mdiAnsiKeyboard.cpp; path = ../../../source/mdiAnsiKeyboard.cpp; sourceTree = "<group>"; };
+		7C206F1A1C3703A600D53B1A /* mdiAnsiKeyboard.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = mdiAnsiKeyboard.hpp; path = ../../../include/mdiAnsiKeyboard.hpp; sourceTree = "<group>"; };
 		7CCBE04E1C3311BD00C36DDF /* eosMidiController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eosMidiController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCBE0571C3311BD00C36DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CCBE0641C3311E800C36DDF /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
@@ -80,6 +83,7 @@
 		7C206ED81C33541700D53B1A /* include */ = {
 			isa = PBXGroup;
 			children = (
+				7C206F1A1C3703A600D53B1A /* mdiAnsiKeyboard.hpp */,
 				7C206F0F1C3355D600D53B1A /* mdiCtrl.hpp */,
 				7C206EEC1C33549D00D53B1A /* CodeEditor.h */,
 				7C206EED1C33549D00D53B1A /* ctrlLineFollower.hpp */,
@@ -97,6 +101,7 @@
 		7C206ED91C33541C00D53B1A /* source */ = {
 			isa = PBXGroup;
 			children = (
+				7C206F181C37039D00D53B1A /* mdiAnsiKeyboard.cpp */,
 				7C206F101C3355E100D53B1A /* mdiCtrl.cpp */,
 				7C206EF51C3354A900D53B1A /* CodeEditor.cpp */,
 				7C206EF61C3354A900D53B1A /* ctrlLineFollower.cpp */,
@@ -221,6 +226,7 @@
 				7C206F041C3354A900D53B1A /* mdiInspectorMenu.cpp in Sources */,
 				7C206EFF1C3354A900D53B1A /* CodeEditor.cpp in Sources */,
 				7C206F031C3354A900D53B1A /* mdiGridWindow.cpp in Sources */,
+				7C206F191C37039D00D53B1A /* mdiAnsiKeyboard.cpp in Sources */,
 				7C206F061C3354A900D53B1A /* mdiStatusBar.cpp in Sources */,
 				7C206F011C3354A900D53B1A /* main.cpp in Sources */,
 				7C206F021C3354A900D53B1A /* mdiApplicationManager.cpp in Sources */,

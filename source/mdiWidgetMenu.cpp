@@ -244,7 +244,7 @@ ax::Point WidgetMenu::ParseControlFolder()
 			}
 		}
 	}
-	
+
 	return pos;
 }
 
